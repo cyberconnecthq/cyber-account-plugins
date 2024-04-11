@@ -23,7 +23,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "Cyberkonnect",
+  "author": "CyberConnect",
   "license": "MIT",
   "dependencies": {
     "@cyberlab/cyber-account": "^2.3.2",
