@@ -1,6 +1,6 @@
 {
   "name": "@cyberlab/cyber-account-plugins",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Plugins for extending CyberAccount",
   "types": "dist/index.d.ts",
   "type": "module",
@@ -20,7 +20,7 @@
     }
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsup"
   },
   "keywords": [],
   "author": "CyberConnect",

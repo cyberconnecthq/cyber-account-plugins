@@ -34,7 +34,7 @@ export const createSessionKeyAccount = async (
     validatorData: SessionKeyData<Abi>;
     sessionKeySigner: SmartAccountSigner;
   },
-): Promise<KernelSmartAccount> => {
+): Promise<SessionKeyAccount> => {
   const client = cyberAccount.publicClient as Client<
     HttpTransport,
     Chain,
@@ -81,7 +81,7 @@ export type SessionKeyAccountClient = KernelAccountClient & {
 };
 
 export const createSessionKeyAccountClient = async (
-  sessionKeyAccount: KernelSmartAccount,
+  sessionKeyAccount: SessionKeyAccount,
   cyberAccount: CyberAccount,
 ): Promise<SessionKeyAccountClient> => {
   const accountClient = createKernelAccountClient({
@@ -99,11 +99,15 @@ export const createSessionKeyAccountClient = async (
   return accountClient as unknown as SessionKeyAccountClient;
 };
 
-export const serializeSessionKeyAccount = zeroDevSerializeSessionKeyAccount;
+export const serializeSessionKeyAccount = async (
+  account: SessionKeyAccount,
+  privateKey?: Hex,
+) => await zeroDevSerializeSessionKeyAccount(account, privateKey);
+
 export const deserializeSessionKeyAccount = async (
   client: CyberAccount["publicClient"],
   serialized: string,
-) =>
+): Promise<SessionKeyAccount> =>
   await zeroDevDeserializeSessionKeyAccount(
     //@ts-ignore
     client,
