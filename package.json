@@ -1,0 +1,49 @@
+{
+  "name": "@cyberlab/cyber-account-plugins",
+  "version": "0.0.1",
+  "description": "Plugins for extending CyberAccount",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "files": [
+    "/dist"
+  ],
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Cyberkonnect",
+  "license": "MIT",
+  "dependencies": {
+    "@cyberlab/cyber-account": "^2.3.2",
+    "@zerodev/ecdsa-validator": "5.1.2",
+    "@zerodev/sdk": "5.1.14",
+    "@zerodev/session-key": "5.1.2",
+    "permissionless": "0.0.34",
+    "typescript": "^5.4.5",
+    "viem": "^2.9.15"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.7",
+    "tslib": "^2.6.2",
+    "tsup": "^8.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cyberconnecthq/cyber-account-plugins.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
